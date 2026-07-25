@@ -9,7 +9,7 @@
                 <span class="font-bold text-sm text-white">Rintasa</span>
             </div>
             <p class="text-xs text-gray-400 leading-relaxed mb-4">
-                Platform kolaborasi BizClub dan BEM untuk UMKM kampus.
+                Platform kolaborasi BEM Nawasena dan Bizclub Ubermans untuk UMKM kampus.
             </p>
             <div class="flex gap-2">
                 <a href="#"
@@ -74,9 +74,11 @@
     </div>
 
     <div
-        class="border-t border-white/10 pt-5 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p class="text-xs text-gray-500 text-center sm:text-left">&copy; {{ date('Y') }} Rintasa. Semua hak
-            dilindungi.</p>
-        <p class="text-xs text-gray-500">Kerja sama BizClub x BEM</p>
+        class="border-t border-white/10 pt-5 max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center">
+        <p class="text-xs text-gray-500">
+            &copy; {{ date('Y') }} Rintasa
+            <span class="text-gray-600 mx-1">&middot;</span>
+            A collaboration by BEM Nawasena x Bizclub Ubermensch. All rights reserved.
+        </p>
     </div>
 </footer>

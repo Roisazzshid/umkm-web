@@ -34,6 +34,14 @@
                 </div>
             @endforelse
         </div>
+
+        <div id="umkm-kosong" class="hidden text-center py-12">
+            <div class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-3">
+                <i class="ti ti-search-off text-2xl text-ink-muted"></i>
+            </div>
+            <div class="font-bold text-ink text-sm mb-1">UMKM tidak ditemukan</div>
+            <p class="text-xs sm:text-sm text-ink-muted">Belum ada UMKM tersedia di kategori ini.</p>
+        </div>
     </section>
 
     <script>
@@ -41,19 +49,26 @@
             const inputCari = document.getElementById('cari-umkm');
             const semuaRow = Array.from(document.querySelectorAll('#daftar-umkm [data-row]'));
             const semuaChip = Array.from(document.querySelectorAll('[data-filter-kategori]'));
+            const kosong = document.getElementById('umkm-kosong');
             let kategoriAktif = 'semua';
 
             function terapkanFilter() {
                 const kataKunci = inputCari.value.trim().toLowerCase();
+
                 semuaRow.forEach(function(row) {
                     const cocokKategori = kategoriAktif === 'semua' || row.dataset.kategori === kategoriAktif;
                     const cocokNama = kataKunci === '' || row.dataset.nama.includes(kataKunci);
-                    if (cocokKategori && cocokNama) {
-                        row.classList.remove('hidden');
-                    } else {
-                        row.classList.add('hidden');
-                    }
+                    row.dataset.tersaring = (cocokKategori && cocokNama) ? 'ya' : 'tidak';
+                    row.style.display = row.dataset.tersaring === 'tidak' ? 'none' : '';
                 });
+
+                const adaYangTampil = semuaRow.some(function(row) {
+                    return row.dataset.tersaring !== 'tidak';
+                });
+
+                if (kosong) {
+                    kosong.classList.toggle('hidden', adaYangTampil || semuaRow.length === 0);
+                }
             }
 
             if (inputCari) {
@@ -72,6 +87,8 @@
                     terapkanFilter();
                 });
             });
+
+            terapkanFilter();
         })();
     </script>
 </x-layouts.guest>

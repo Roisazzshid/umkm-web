@@ -16,7 +16,7 @@
                 <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white border border-gray-100 flex items-center justify-center overflow-hidden mb-2">
                     <img src="{{ asset('assets/logo/logo-bizclub.png') }}" alt="Logo BizClub" class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
                 </div>
-                <span class="text-xs font-bold text-ink">BizClub</span>
+                <span class="text-xs font-bold text-ink">BizClub Ubermensch</span>
             </div>
             <i class="ti ti-x text-lg text-ink-muted"></i>
             <div class="flex flex-col items-center">

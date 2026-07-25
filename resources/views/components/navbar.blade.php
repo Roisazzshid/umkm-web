@@ -7,6 +7,7 @@
     <div class="hidden md:flex items-center gap-7">
         <a href="{{ route('home') }}" class="text-sm text-gray-700 hover:text-primary">Beranda</a>
         <a href="{{ route('produk.index') }}" class="text-sm text-gray-700 hover:text-primary">Produk</a>
+        <a href="{{ route('umkm.list') }}" class="text-sm text-gray-700 hover:text-primary">UMKM</a>
         <a href="{{ route('about') }}" class="text-sm text-gray-700 hover:text-primary">Tentang kami</a>
     </div>
 
